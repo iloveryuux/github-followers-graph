@@ -1,0 +1,29 @@
+{
+	"name": "github-followers-graph",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "tsup",
+		"commit": "commitlint --edit ${1}",
+		"format": "biome format --write",
+		"prepare": "lefthook install"
+	},
+	"keywords": [],
+	"author": "martiin17jr@gmail.com",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@commitlint/cli": "19.3.0",
+		"@ryuux/commitlint-config": "2.0.0",
+		"@types/node": "20.14.12",
+		"lefthook": "1.7.7",
+		"tsup": "8.2.3",
+		"typescript": "5.5.4"
+	},
+	"dependencies": {
+		"@napi-rs/canvas": "0.1.53",
+		"commander": "12.1.0"
+	}
+}

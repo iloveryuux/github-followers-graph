@@ -1,7 +1,9 @@
 import { loadImage, Image } from '@napi-rs/canvas'
-import { IMAGE_SIZE } from '../const.js'
 
-export const fetchImages = async (urls: string[]): Promise<Image[]> => {
+export const fetchImages = async (
+	urls: string[],
+	IMAGE_SIZE: number,
+): Promise<Image[]> => {
 	const imagePromises = urls.map(async (urlString) => {
 		const url = new URL(urlString)
 		url.searchParams.set('size', IMAGE_SIZE.toString())

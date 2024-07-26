@@ -1,6 +1,6 @@
 import { createCanvas } from '@napi-rs/canvas'
 
-import { IMAGE_SIZE, ROWS_OF_IMAGES } from '../const.js'
+import { ROWS_OF_IMAGES } from '../const.js'
 import { FollowersData } from '../types/globals.js'
 import { fetchImages } from './images-fetcher.js'
 import { headers } from '../index.js'
@@ -54,10 +54,13 @@ export const fetchFollowersPfps = async (
 	return fetchFollowersPfps(username, updatedAvatarUrls)
 }
 
-export const generateGraph = async (username: string): Promise<Buffer> => {
+export const generateGraph = async (
+	username: string,
+	IMAGE_SIZE: number,
+): Promise<Buffer> => {
 	const avatarUrls: string[] = await fetchFollowersPfps(username)
 
-	const images = await fetchImages(avatarUrls)
+	const images = await fetchImages(avatarUrls, IMAGE_SIZE)
 
 	const len = images.length
 	const width = IMAGE_SIZE * ROWS_OF_IMAGES

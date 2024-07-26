@@ -1,9 +1,9 @@
 import { createCanvas } from '@napi-rs/canvas'
 
 import { IMAGE_SIZE, ROWS_OF_IMAGES } from '../const.js'
-import { FollowersData } from '../../types/globals.js'
+import { FollowersData } from '../types/globals.js'
 import { fetchImages } from './images-fetcher.js'
-import { headers } from '../../index.js'
+import { headers } from '../index.js'
 
 export const fetchGraphQL = async (
 	username: string,

@@ -1,7 +1,7 @@
 import { InvalidArgumentError, program } from 'commander'
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
-import { generateGraph } from './utils/fetchers/graph-fetcher.js'
-import { OUT_FILE } from './utils/const.js'
+import { generateGraph } from './fetchers/graph-fetcher.js'
+import { OUT_FILE } from './const.js'
 import { dirname } from 'node:path'
 
 program

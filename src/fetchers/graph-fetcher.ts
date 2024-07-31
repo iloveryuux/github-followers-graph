@@ -40,18 +40,24 @@ export const fetchGraphQL = async (
 export const fetchFollowersPfps = async (
 	username: string,
 	avatarsURLs: string[] = [],
+	limit: number = 100,
 ): Promise<string[]> => {
 	const followersData = await fetchGraphQL(username)
 	const { pageInfo, nodes } = followersData.user.followers
+
 	const updatedAvatarUrls = avatarsURLs.concat(
 		nodes.map((node) => node.avatarUrl),
 	)
+
+	if (updatedAvatarUrls.length >= limit) {
+		return updatedAvatarUrls.slice(0, limit)
+	}
 
 	if (!pageInfo.hasNextPage) {
 		return updatedAvatarUrls
 	}
 
-	return fetchFollowersPfps(username, updatedAvatarUrls)
+	return fetchFollowersPfps(username, updatedAvatarUrls, limit)
 }
 
 export const generateGraph = async (

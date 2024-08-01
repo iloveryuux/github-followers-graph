@@ -62,7 +62,8 @@ export const fetchFollowersPfps = async (
 
 export const generateGraph = async (
   username: string,
-  IMAGE_SIZE: number
+  IMAGE_SIZE: number,
+  ROWS_OF_IMAGES: number
 ): Promise<Buffer> => {
   const avatarUrls: string[] = await fetchFollowersPfps(username)
 

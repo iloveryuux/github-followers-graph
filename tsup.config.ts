@@ -12,5 +12,5 @@ export default defineConfig({
   clean: true,
   dts: true,
   splitting: false,
-  minify: false,
+  minify: false
 } as Options)

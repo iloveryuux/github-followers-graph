@@ -1,6 +1,5 @@
 import { createCanvas } from '@napi-rs/canvas'
 
-import { ROWS_OF_IMAGES } from '../const.js'
 import { FollowersData } from '../types/globals.js'
 import { fetchImages } from './images-fetcher.js'
 import { headers } from '../index.js'
@@ -26,7 +25,7 @@ export const fetchGraphQL = async (
   const response = await fetch('https://api.github.com/graphql', {
     headers,
     method: 'POST',
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({ query })
   })
 
   if (!response.ok) {

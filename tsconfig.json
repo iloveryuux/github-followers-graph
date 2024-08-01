@@ -1,9 +1,9 @@
 {
-	"compilerOptions": {
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
-		"esModuleInterop": true
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

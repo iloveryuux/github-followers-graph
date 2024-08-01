@@ -17,7 +17,7 @@ const rowsToUse = Number(rowsOfImages) || ROWS_OF_IMAGES
 
 export const headers = {
   'Content-Type': 'application/json',
-  Authorization: `Bearer ${githubToken}`,
+  Authorization: `Bearer ${githubToken}`
 }
 
 if (!githubToken) {
@@ -25,7 +25,7 @@ if (!githubToken) {
 }
 
 const { login } = await fetch('https://api.github.com/user', {
-  headers,
+  headers
 }).then(res => res.json())
 
 const graph = await generateGraph(login, sizeToUse, rowsToUse)
